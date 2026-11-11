@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-cinzel: 'Cinzel', serif;
+    --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+    --font-script: 'Great Vibes', cursive;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #FAF7F2;
+    color: #2D2424;
+    overflow-x: hidden;
+  }
+
+  /* Custom typography classes */
+  .font-royal,
+  .font-cinzel {
+    font-family: var(--font-cinzel);
+  }
+
+  .font-serif-elegant {
+    font-family: var(--font-cormorant);
+  }
+
+  .font-script {
+    font-family: var(--font-script);
+  }
+
+  /* Custom gold gradient text */
+  .gold-gradient-text {
+    background: linear-gradient(135deg, #B38728 0%, #FBF5B7 25%, #DAA520 50%, #AA771C 75%, #FBF5B7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .gold-foil-border {
+    border-image: linear-gradient(135deg, #B38728, #FBF5B7, #DAA520, #AA771C) 1;
+  }
+
+  .gold-shimmer {
+    background: linear-gradient(90deg, rgba(218,165,32,0.1) 0%, rgba(251,245,183,0.3) 50%, rgba(218,165,32,0.1) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 4s infinite;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 35s linear infinite;
+}
+
+/* Custom elegant scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B38728;
+}
